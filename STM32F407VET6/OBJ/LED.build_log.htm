@@ -1,0 +1,72 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.14.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: River River, 123, LIC=GMZLQ-NBWN3-CX4U6-D2IDG-F08QG-39N70
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Standard  Version: 5.14.0.0
+Toolchain Path:  F:\Keil5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.05 update 1 (build 106)
+Assembler:       Armasm.exe V5.05 update 1 (build 106)
+Linker/Locator:  ArmLink.exe V5.05 update 1 (build 106)
+Library Manager: ArmAr.exe V5.05 update 1 (build 106)
+Hex Converter:   FromElf.exe V5.05 update 1 (build 106)
+CPU DLL:         SARMCM3.DLL V5.14.0.0
+Dialog DLL:      DCM.DLL V1.13.1.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.14.0_KEIL
+Dialog DLL:      TCM.DLL V1.14.4.0
+ 
+<h2>Project:</h2>
+D:\STM32F407VET6-100P--最小F4系统板资料\1，STM32F4xx标准例程\1，STM32F4xx标准例程\例程1 跑马灯实验\USER\LED.uvprojx
+Project File Date:  05/01/2021
+
+<h2>Output:</h2>
+*** Note: Rebuilding project, since 'Options->Output->Create Batch File' is selected.
+Rebuild target 'LED'
+compiling main.c...
+main.c(16): warning:  #223-D: function "OLED_Init" declared implicitly
+        OLED_Init();                            //初始化OLED
+main.c: 1 warning, 0 errors
+compiling stm32f4xx_it.c...
+compiling system_stm32f4xx.c...
+compiling led.c...
+compiling oled.c...
+..\HARDWARE\LED\oled.h(46): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\HARDWARE\LED\oledfont.h(362): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\HARDWARE\LED\oled.c(181): warning:  #186-D: pointless comparison of unsigned integer with zero
+        if((x1<0)||(x2>128)||(y1<0)||(y2>64)||(x1>x2)||(y1>y2))return;
+..\HARDWARE\LED\oled.c(181): warning:  #186-D: pointless comparison of unsigned integer with zero
+        if((x1<0)||(x2>128)||(y1<0)||(y2>64)||(x1>x2)||(y1>y2))return;
+..\HARDWARE\LED\oled.c(180): warning:  #177-D: variable "y0" was declared but never referenced
+        u8 i,k,k1,k2,y0;
+..\HARDWARE\LED\oled.c(495): warning:  #1-D: last line of file ends without a newline
+  }
+..\HARDWARE\LED\oled.c: 6 warnings, 0 errors
+compiling delay.c...
+compiling sys.c...
+compiling usart.c...
+assembling startup_stm32f40_41xxx.s...
+compiling misc.c...
+compiling stm32f4xx_gpio.c...
+compiling stm32f4xx_rcc.c...
+compiling stm32f4xx_syscfg.c...
+compiling stm32f4xx_usart.c...
+linking...
+Program Size: Code=7750 RO-data=6506 RW-data=5224 ZI-data=2984  
+FromELF: creating hex file...
+"..\OBJ\LED.axf" - 0 Error(s), 7 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  D:\STM32F407VET6-100P--最小F4系统板资料\1，STM32F4xx标准例程\1，STM32F4xx标准例程\例程1 跑马灯实验\USER\RTE
+  F:\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0
+
+<h2>Collection of Component Files used:</h2>
+</pre>
+</body>
+</html>
