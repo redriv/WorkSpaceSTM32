@@ -39,3 +39,14 @@
 ..\obj\main.o: ..\SYSTEM\usart\usart.h
 ..\obj\main.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\main.o: ..\HARDWARE\LED\led.h
+..\obj\main.o: ..\FreeRTOS\include\FreeRTOS.h
+..\obj\main.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+..\obj\main.o: ..\USER\FreeRTOSConfig.h
+..\obj\main.o: ..\HARDWARE\uart\bsp_debug_usart.h
+..\obj\main.o: ..\FreeRTOS\include\projdefs.h
+..\obj\main.o: ..\FreeRTOS\include\portable.h
+..\obj\main.o: ..\FreeRTOS\include\deprecated_definitions.h
+..\obj\main.o: ..\FreeRTOS\port\RVDS\ARM_CM4F\portmacro.h
+..\obj\main.o: ..\FreeRTOS\include\mpu_wrappers.h
+..\obj\main.o: ..\FreeRTOS\include\task.h
+..\obj\main.o: ..\FreeRTOS\include\list.h

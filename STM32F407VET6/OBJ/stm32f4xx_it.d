@@ -35,3 +35,15 @@
 ..\obj\stm32f4xx_it.o: ..\FWLIB\inc\stm32f4xx_dac.h
 ..\obj\stm32f4xx_it.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\stm32f4xx_it.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
+..\obj\stm32f4xx_it.o: ..\FreeRTOS\include\FreeRTOS.h
+..\obj\stm32f4xx_it.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+..\obj\stm32f4xx_it.o: ..\USER\FreeRTOSConfig.h
+..\obj\stm32f4xx_it.o: ..\HARDWARE\uart\bsp_debug_usart.h
+..\obj\stm32f4xx_it.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\stm32f4xx_it.o: ..\FreeRTOS\include\projdefs.h
+..\obj\stm32f4xx_it.o: ..\FreeRTOS\include\portable.h
+..\obj\stm32f4xx_it.o: ..\FreeRTOS\include\deprecated_definitions.h
+..\obj\stm32f4xx_it.o: ..\FreeRTOS\port\RVDS\ARM_CM4F\portmacro.h
+..\obj\stm32f4xx_it.o: ..\FreeRTOS\include\mpu_wrappers.h
+..\obj\stm32f4xx_it.o: ..\FreeRTOS\include\task.h
+..\obj\stm32f4xx_it.o: ..\FreeRTOS\include\list.h

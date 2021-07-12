@@ -3,6 +3,10 @@
 #include "usart.h"
 #include "led.h"
 
+#include "FreeRTOS.h"
+#include "task.h"
+
+
 
 //跑马灯实验 -库函数版本
 //STM32F4工程模板-库函数版本
@@ -19,12 +23,12 @@ int main(void)
 	
 	while(1)
 	{
-	GPIO_ResetBits(GPIOA,GPIO_Pin_6);  //LED0对应引脚GPIOA.6拉低，亮  等同LED0=0;
-	GPIO_SetBits(GPIOA,GPIO_Pin_7);   //LED1对应引脚GPIOA.7拉高，灭 等同LED1=1;
-	delay_ms(50);  		   //延时300ms
-	GPIO_SetBits(GPIOA,GPIO_Pin_6);	   //LED0对应引脚GPIOA.6拉高，灭  等同LED0=1;
-	GPIO_ResetBits(GPIOA,GPIO_Pin_7); //LED1对应引脚GPIOA.7拉低，亮 等同LED1=0;
-	delay_ms(50);                     //延时300ms
+		GPIO_ResetBits(GPIOA,GPIO_Pin_6); //LED0对应引脚GPIOA.6拉低，亮  等同LED0=0;
+		GPIO_SetBits(GPIOA,GPIO_Pin_7);   //LED1对应引脚GPIOA.7拉高，灭 等同LED1=1;
+		delay_ms(50);  		   			  //延时300ms
+		GPIO_SetBits(GPIOA,GPIO_Pin_6);	  //LED0对应引脚GPIOA.6拉高，灭  等同LED0=1;
+		GPIO_ResetBits(GPIOA,GPIO_Pin_7); //LED1对应引脚GPIOA.7拉低，亮 等同LED1=0;
+		delay_ms(50);                     //延时300ms
 	}
 }
 
