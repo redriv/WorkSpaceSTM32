@@ -41,6 +41,7 @@
 ..\obj\tasks.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
 ..\obj\tasks.o: ..\HARDWARE\uart\bsp_debug_usart.h
 ..\obj\tasks.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\tasks.o: ..\SYSTEM\sys\sys.h
 ..\obj\tasks.o: ..\FreeRTOS\include\projdefs.h
 ..\obj\tasks.o: ..\FreeRTOS\include\portable.h
 ..\obj\tasks.o: ..\FreeRTOS\include\deprecated_definitions.h

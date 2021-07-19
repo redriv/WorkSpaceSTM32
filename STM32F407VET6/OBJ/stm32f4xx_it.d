@@ -40,6 +40,7 @@
 ..\obj\stm32f4xx_it.o: ..\USER\FreeRTOSConfig.h
 ..\obj\stm32f4xx_it.o: ..\HARDWARE\uart\bsp_debug_usart.h
 ..\obj\stm32f4xx_it.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\stm32f4xx_it.o: ..\SYSTEM\sys\sys.h
 ..\obj\stm32f4xx_it.o: ..\FreeRTOS\include\projdefs.h
 ..\obj\stm32f4xx_it.o: ..\FreeRTOS\include\portable.h
 ..\obj\stm32f4xx_it.o: ..\FreeRTOS\include\deprecated_definitions.h

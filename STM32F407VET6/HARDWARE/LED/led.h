@@ -12,5 +12,5 @@
 #define LED0 PAout(6)	// D2
 #define LED1 PAout(7)	// D3	 
 
-void LED_Init(void);//初始化		 				    
+void LED_GPIO_Config(void);//初始化		 				    
 #endif

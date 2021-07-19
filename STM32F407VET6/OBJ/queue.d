@@ -41,6 +41,7 @@
 ..\obj\queue.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
 ..\obj\queue.o: ..\HARDWARE\uart\bsp_debug_usart.h
 ..\obj\queue.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\queue.o: ..\SYSTEM\sys\sys.h
 ..\obj\queue.o: ..\FreeRTOS\include\projdefs.h
 ..\obj\queue.o: ..\FreeRTOS\include\portable.h
 ..\obj\queue.o: ..\FreeRTOS\include\deprecated_definitions.h

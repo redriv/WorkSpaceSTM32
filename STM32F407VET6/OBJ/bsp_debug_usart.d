@@ -36,3 +36,4 @@
 ..\obj\bsp_debug_usart.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\bsp_debug_usart.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
 ..\obj\bsp_debug_usart.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\bsp_debug_usart.o: ..\SYSTEM\sys\sys.h

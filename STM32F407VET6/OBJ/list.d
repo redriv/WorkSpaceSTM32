@@ -40,6 +40,7 @@
 ..\obj\list.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
 ..\obj\list.o: ..\HARDWARE\uart\bsp_debug_usart.h
 ..\obj\list.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\list.o: ..\SYSTEM\sys\sys.h
 ..\obj\list.o: ..\FreeRTOS\include\projdefs.h
 ..\obj\list.o: ..\FreeRTOS\include\portable.h
 ..\obj\list.o: ..\FreeRTOS\include\deprecated_definitions.h

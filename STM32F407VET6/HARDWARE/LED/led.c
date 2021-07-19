@@ -6,7 +6,7 @@
 
 //初始化PA6和PA7为输出口.并使能这两个口的时钟		    
 //LED IO初始化
-void LED_Init(void)
+void LED_GPIO_Config(void)
 {    	 
   GPIO_InitTypeDef  GPIO_InitStructure;
 

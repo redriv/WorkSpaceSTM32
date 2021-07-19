@@ -3,7 +3,8 @@
 
 #include "stm32f4xx.h"
 #include <stdio.h>
-
+#include "stm32f4xx_conf.h"
+#include "sys.h" 
 
 //Òý½Å¶¨Òå
 /*******************************************************/
