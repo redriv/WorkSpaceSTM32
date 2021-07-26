@@ -39,7 +39,7 @@
 ..\obj\key.o: ..\FreeRTOS\include\FreeRTOS.h
 ..\obj\key.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
 ..\obj\key.o: ..\USER\FreeRTOSConfig.h
-..\obj\key.o: ..\HARDWARE\uart\bsp_debug_usart.h
+..\obj\key.o: ..\HARDWARE\UART\bsp_debug_usart.h
 ..\obj\key.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\key.o: ..\FreeRTOS\include\projdefs.h
 ..\obj\key.o: ..\FreeRTOS\include\portable.h

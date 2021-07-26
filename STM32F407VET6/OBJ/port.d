@@ -37,7 +37,7 @@
 ..\obj\port.o: ..\FWLIB\inc\stm32f4xx_dac.h
 ..\obj\port.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\port.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
-..\obj\port.o: ..\HARDWARE\uart\bsp_debug_usart.h
+..\obj\port.o: ..\HARDWARE\UART\bsp_debug_usart.h
 ..\obj\port.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\port.o: ..\SYSTEM\sys\sys.h
 ..\obj\port.o: ..\FreeRTOS\include\projdefs.h

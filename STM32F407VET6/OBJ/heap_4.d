@@ -38,7 +38,7 @@
 ..\obj\heap_4.o: ..\FWLIB\inc\stm32f4xx_dac.h
 ..\obj\heap_4.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\heap_4.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
-..\obj\heap_4.o: ..\HARDWARE\uart\bsp_debug_usart.h
+..\obj\heap_4.o: ..\HARDWARE\UART\bsp_debug_usart.h
 ..\obj\heap_4.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\heap_4.o: ..\SYSTEM\sys\sys.h
 ..\obj\heap_4.o: ..\FreeRTOS\include\projdefs.h

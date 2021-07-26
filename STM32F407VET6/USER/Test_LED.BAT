@@ -10,7 +10,6 @@ SET CPU_CLOCK=0x00B71B00
 "F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\led.__i"
 "F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\oled.__i"
 "F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\key.__i"
-"F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\delay.__i"
 "F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\sys.__i"
 "F:\Keil5\ARM\ARMCC\Bin\ArmAsm" --Via "..\obj\startup_stm32f40_41xxx._ia"
 "F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\misc.__i"

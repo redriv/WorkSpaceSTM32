@@ -6,7 +6,6 @@
 "..\obj\led.o"
 "..\obj\oled.o"
 "..\obj\key.o"
-"..\obj\delay.o"
 "..\obj\sys.o"
 "..\obj\startup_stm32f40_41xxx.o"
 "..\obj\misc.o"

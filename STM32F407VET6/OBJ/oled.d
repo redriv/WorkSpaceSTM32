@@ -37,5 +37,16 @@
 ..\obj\oled.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\oled.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
 ..\obj\oled.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\oled.o: ..\FreeRTOS\include\FreeRTOS.h
+..\obj\oled.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+..\obj\oled.o: ..\USER\FreeRTOSConfig.h
+..\obj\oled.o: ..\HARDWARE\UART\bsp_debug_usart.h
+..\obj\oled.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\oled.o: ..\FreeRTOS\include\projdefs.h
+..\obj\oled.o: ..\FreeRTOS\include\portable.h
+..\obj\oled.o: ..\FreeRTOS\include\deprecated_definitions.h
+..\obj\oled.o: ..\FreeRTOS\port\RVDS\ARM_CM4F\portmacro.h
+..\obj\oled.o: ..\FreeRTOS\include\mpu_wrappers.h
+..\obj\oled.o: ..\FreeRTOS\include\task.h
+..\obj\oled.o: ..\FreeRTOS\include\list.h
 ..\obj\oled.o: ..\HARDWARE\LED\oledfont.h
-..\obj\oled.o: ..\SYSTEM\delay\delay.h

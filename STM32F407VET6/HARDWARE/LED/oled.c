@@ -1,14 +1,11 @@
 #include "oled.h"
 #include "stdlib.h"
 #include "oledfont.h"  	 
-#include "delay.h"
+
 
 u8 OLED_GRAM[144][8];
 
-void delay(u32 t)
-{
-	while(t--);
-}
+
 
 //反显函数
 void OLED_ColorTurn(u8 i)
@@ -41,25 +38,25 @@ void OLED_DisplayTurn(u8 i)
 //起始信号
 void I2C_Start(void)
 {
-	OLED_SDIN_Set();delay(1);
-	OLED_SCLK_Set();delay(1);
-	OLED_SDIN_Clr();delay(1);
-	OLED_SCLK_Clr();delay(1);
+	OLED_SDIN_Set();vTaskDelay(1);
+	OLED_SCLK_Set();vTaskDelay(1);
+	OLED_SDIN_Clr();vTaskDelay(1);
+	OLED_SCLK_Clr();vTaskDelay(1);
 }
 
 //结束信号
 void I2C_Stop(void)
 {
-	OLED_SCLK_Set();delay(1);
-	OLED_SDIN_Clr();delay(1);
-	OLED_SDIN_Set();delay(1);
+	OLED_SCLK_Set();vTaskDelay(1);
+	OLED_SDIN_Clr();vTaskDelay(1);
+	OLED_SDIN_Set();vTaskDelay(1);
 }
 
 //等待信号响应
 void I2C_WaitAck(void) //测数据信号的电平
 {
-	OLED_SCLK_Set();delay(1);
-	OLED_SCLK_Clr();delay(1);
+	OLED_SCLK_Set();vTaskDelay(1);
+	OLED_SCLK_Clr();vTaskDelay(1);
 }
 
 //写入一个字节
@@ -69,19 +66,19 @@ void Send_Byte(u8 dat)
 	for(i=0;i<8;i++)
 	{
 		OLED_SCLK_Clr();//将时钟信号设置为低电平
-		delay(1);
+		vTaskDelay(1);
 		if(dat&0x80)//将dat的8位从最高位依次写入
 		{
-			OLED_SDIN_Set();delay(1);
+			OLED_SDIN_Set();vTaskDelay(1);
     }
 		else
 		{
-			OLED_SDIN_Clr();delay(1);
+			OLED_SDIN_Clr();vTaskDelay(1);
     }
 		OLED_SCLK_Set();//将时钟信号设置为高电平
-		delay(1);
+		vTaskDelay(1);
 		OLED_SCLK_Clr();//将时钟信号设置为低电平
-		delay(1);
+		vTaskDelay(1);
 		dat<<=1;
   }
 }
@@ -461,7 +458,7 @@ void OLED_Init(void)
   GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;//上拉
   GPIO_Init(GPIOG, &GPIO_InitStructure);//初始化
 	
-	delay_ms(200);
+	//vTaskDelay_ms(200);
 	
 	OLED_WR_Byte(0xAE,OLED_CMD);//--turn off oled panel
 	OLED_WR_Byte(0x00,OLED_CMD);//---set low column address

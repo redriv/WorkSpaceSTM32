@@ -39,7 +39,7 @@
 ..\obj\queue.o: ..\FWLIB\inc\stm32f4xx_dac.h
 ..\obj\queue.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\queue.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
-..\obj\queue.o: ..\HARDWARE\uart\bsp_debug_usart.h
+..\obj\queue.o: ..\HARDWARE\UART\bsp_debug_usart.h
 ..\obj\queue.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\queue.o: ..\SYSTEM\sys\sys.h
 ..\obj\queue.o: ..\FreeRTOS\include\projdefs.h

@@ -38,7 +38,7 @@
 ..\obj\event_groups.o: ..\FWLIB\inc\stm32f4xx_dac.h
 ..\obj\event_groups.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\event_groups.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
-..\obj\event_groups.o: ..\HARDWARE\uart\bsp_debug_usart.h
+..\obj\event_groups.o: ..\HARDWARE\UART\bsp_debug_usart.h
 ..\obj\event_groups.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\event_groups.o: ..\SYSTEM\sys\sys.h
 ..\obj\event_groups.o: ..\FreeRTOS\include\projdefs.h

@@ -4,6 +4,9 @@
 #include "sys.h"
 #include "stdlib.h"	
 
+#include "FreeRTOS.h"
+#include "task.h"
+
 //-----------------OLED¶Ë¿Ú¶¨Òå----------------
 
 #define OLED_SCLK_Clr() GPIO_ResetBits(GPIOG,GPIO_Pin_12)//SCL

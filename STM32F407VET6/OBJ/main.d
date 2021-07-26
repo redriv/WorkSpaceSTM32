@@ -35,13 +35,12 @@
 ..\obj\main.o: ..\FWLIB\inc\stm32f4xx_dac.h
 ..\obj\main.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\main.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
-..\obj\main.o: ..\SYSTEM\delay\delay.h
 ..\obj\main.o: ..\HARDWARE\LED\led.h
 ..\obj\main.o: ..\HARDWARE\KEY\key.h
 ..\obj\main.o: ..\FreeRTOS\include\FreeRTOS.h
 ..\obj\main.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
 ..\obj\main.o: ..\USER\FreeRTOSConfig.h
-..\obj\main.o: ..\HARDWARE\uart\bsp_debug_usart.h
+..\obj\main.o: ..\HARDWARE\UART\bsp_debug_usart.h
 ..\obj\main.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\main.o: ..\FreeRTOS\include\projdefs.h
 ..\obj\main.o: ..\FreeRTOS\include\portable.h
@@ -50,3 +49,6 @@
 ..\obj\main.o: ..\FreeRTOS\include\mpu_wrappers.h
 ..\obj\main.o: ..\FreeRTOS\include\task.h
 ..\obj\main.o: ..\FreeRTOS\include\list.h
+..\obj\main.o: ..\HARDWARE\LED\oled.h
+..\obj\main.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\main.o: ..\FreeRTOS\include\queue.h
