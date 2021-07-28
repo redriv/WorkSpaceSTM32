@@ -22,12 +22,17 @@ Dialog DLL:      TCM.DLL V1.14.4.0
  
 <h2>Project:</h2>
 F:\GitSpace\workspce\STM32F407VET6\USER\LED.uvprojx
-Project File Date:  07/20/2021
+Project File Date:  07/27/2021
 
 <h2>Output:</h2>
 *** Note: Rebuilding project, since 'Options->Output->Create Batch File' is selected.
 Rebuild target 'Test_LED'
 compiling main.c...
+main.c(266): warning:  #177-D: variable "r_queue" was declared but never referenced
+        int r_queue; /* 定义一个接收消息的变量 */
+main.c(297): warning:  #177-D: label "defalut" was declared but never referenced
+                                defalut :
+main.c: 2 warnings, 0 errors
 compiling stm32f4xx_it.c...
 compiling system_stm32f4xx.c...
 compiling bsp_debug_usart.c...
@@ -55,9 +60,9 @@ compiling timers.c...
 compiling heap_4.c...
 compiling port.c...
 linking...
-Program Size: Code=16522 RO-data=466 RW-data=164 ZI-data=39516  
+Program Size: Code=16602 RO-data=466 RW-data=164 ZI-data=39516  
 FromELF: creating hex file...
-"..\OBJ\LED.axf" - 0 Error(s), 2 Warning(s).
+"..\OBJ\LED.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   F:\GitSpace\workspce\STM32F407VET6\USER\RTE

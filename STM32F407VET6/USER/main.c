@@ -8,10 +8,31 @@
 #include "FreeRTOSConfig.h"
 #include "queue.h"
 
-static TaskHandle_t AppTaskCreate_Handle = NULL;/* 创建任务句柄 */
+
+typedef union 
+	{
+		uint32_t intdata;
+		uint8_t* chrdata;
+	}Data;
+
+typedef struct{
+	
+	uint8_t  id;	
+	Data   data;
+} msg;
+
+
+#define Intmsg  0
+#define Charmsg 1
+
+#define QUEUE_LEN 4 /* 队列的长度，最大可包含多少个消息 */
+#define QUEUE_SIZE 4 /* 队列中每个消息大小（字节） */
+
+
 static TaskHandle_t LED_Task_Handle = NULL;/* LED任务句柄 */
 static TaskHandle_t KEY_Task_Handle = NULL;/* KEY任务句柄 */
-static TaskHandle_t OLED_Task_Handle = NULL;/* KEY任务句柄 */
+static TaskHandle_t OLED_Task_Handle = NULL;/* OLED任务句柄 */
+static TaskHandle_t AppTaskCreate_Handle = NULL;/* 创建任务句柄 */
 
 
 static void AppTaskCreate(void);/* 用于创建任务 */
@@ -22,7 +43,7 @@ static void LED_Task(void* pvParameters);/* LED_Task任务实现 */
 
 static void KEY_Task(void* pvParameters);/* KEY_Task任务实现 */
 
-static void OLED_Task(void* pvParameters);/* KEY_Task任务实现 */
+static void OLED_Task(void* pvParameters);/* OLED_Task任务实现 */
 
 
 
@@ -97,8 +118,7 @@ static void BSP_Init(void)
 }
 
 
-#define QUEUE_LEN 4 /* 队列的长度，最大可包含多少个消息 */
-#define QUEUE_SIZE 4 /* 队列中每个消息大小（字节） */
+
 
 /***********************************************************************
   * @ 函数名  ： AppTaskCreate
@@ -111,7 +131,7 @@ static void AppTaskCreate(void)
 
   taskENTER_CRITICAL();           //进入临界区
 	
-  Test_Queue = xQueueCreate((UBaseType_t)QUEUE_LEN,(UBaseType_t)QUEUE_SIZE);
+  Test_Queue = xQueueCreate((UBaseType_t)QUEUE_LEN,(UBaseType_t)sizeof(msg));
   if(Test_Queue != NULL)
 	printf("创建Test_Queue成功!\r\n");
   
@@ -156,28 +176,32 @@ static void AppTaskCreate(void)
   * @ 返回值  ： 无
   ********************************************************************/
 static void LED_Task(void* parameter)
-{	  int count = 0;
-	  while (1)
-	  {
-			if(count >100)count = 0;
+{	  
+		int count = 0;
+		msg LED_msg;
+		LED_msg.id = Intmsg;
+
+		while (1)
+		{
+			if(count > 99)count = 0;
 			else count++;
-		  
+
 			GPIO_ResetBits(GPIOA,GPIO_Pin_6); //LED0对应引脚GPIOA.6拉低，亮  等同LED0=0;
-			GPIO_SetBits(GPIOA,GPIO_Pin_7);   //LED1对应引脚GPIOA.7拉高，灭 等同LED1=1;
-			//printf("Test_Task Running,LED1_ON\r\n");
-			vTaskDelay(10);   /* 延时500个tick */
+			GPIO_SetBits(GPIOA,GPIO_Pin_7);   //LED1对应引脚GPIOA.7拉高，灭 等同LED1=1;			
+			vTaskDelay(500);   /* 延时500个tick */
 
 			GPIO_SetBits(GPIOA,GPIO_Pin_6);	  //LED0对应引脚GPIOA.6拉高，灭  等同LED0=1;
-			GPIO_ResetBits(GPIOA,GPIO_Pin_7); //LED1对应引脚GPIOA.7拉低，亮 等同LED1=0; 
-			//printf("Test_Task Running,LED1_OFF\r\n");
-			vTaskDelay(50);   /* 延时500个tick */
+			GPIO_ResetBits(GPIOA,GPIO_Pin_7); //LED1对应引脚GPIOA.7拉低，亮 等同LED1=0;			
+			vTaskDelay(500);   /* 延时500个tick */
+
+			LED_msg.data.intdata =count;
 
 			xReturn = xQueueSend( Test_Queue, /*  消息队列的句柄 */
-									   &count,/*  发送的消息内容 */
+									&LED_msg, /*  发送的消息内容 */
 										 0 ); /*  等待时间 0 */
-			if (pdPASS != xReturn)	printf(" 消息 send_data1  发送失败!\n\n");
-			
-	  }
+			if (pdPASS != xReturn)	printf(" 消息 LED_msg  发送失败!\n\n");
+
+		}
 }
 
 /**********************************************************************
@@ -187,24 +211,38 @@ static void LED_Task(void* parameter)
   * @ 返回值  ： 无
   ********************************************************************/
 static void KEY_Task(void* parameter)
-{	u8 key;           //保存键值
+{	
+	u8 key;           //保存键值
+	msg KEY_msg;
+	KEY_msg.id = Charmsg;
 	while(1)
 	{
 		key=KEY_Scan(0);		//得到键值
 		switch(key)
 		{		
 			case KEY0_PRES:	//控制LED0翻转
-			{
-					printf("挂起Test任务！\n");
+			{					
 					vTaskSuspend(LED_Task_Handle);/* 挂起LED任务 */
-					printf("挂起Test任务成功！\n");
+				
+					KEY_msg.data.chrdata ="挂起Test任务成功！";
+					xReturn = xQueueSend( Test_Queue, /*  消息队列的句柄 */
+											&KEY_msg, /*  发送的消息内容 */
+												 0 ); /*  等待时间 0 */
+					if (pdPASS != xReturn)	printf(" 消息 KEY_msg  发送失败!\n\n");
 					break;
 			}
 			case KEY1_PRES:	//控制LED1翻转	
 			{					
-					printf("恢复Test任务！\n");
-					vTaskResume(LED_Task_Handle);/* 恢复LED任务！ */
-					printf("恢复Test任务成功！\n");
+					
+					vTaskResume(LED_Task_Handle);/* 恢复LED任务！ */	
+				
+					KEY_msg.data.chrdata ="恢复Test任务成功！";
+					xReturn = xQueueSend( Test_Queue, /*  消息队列的句柄 */
+											&KEY_msg, /*  发送的消息内容 */
+												 0 ); /*  等待时间 0 */
+					if (pdPASS != xReturn)	printf(" 消息 KEY_msg  发送失败!\n\n");
+				
+				
 					break;
 			}
 			default:
@@ -213,6 +251,7 @@ static void KEY_Task(void* parameter)
 				break;
 					
 		}
+		
 	}
 }
 
@@ -225,17 +264,47 @@ static void KEY_Task(void* parameter)
 static void OLED_Task(void* parameter)
 {
 	int r_queue; /* 定义一个接收消息的变量 */
+	msg Tsakmsg;
+		
  
 	while(1)
 	{
 		
 		xReturn = xQueueReceive( Test_Queue, /*  消息队列的句柄 */
-								   &r_queue, /*  发送的消息内容 */
+								   &Tsakmsg, /*  发送的消息内容 */
 						     portMAX_DELAY); /*  等待时间  一直等 */
-		if (pdTRUE== xReturn)
-			printf(" 本次接收到的数据是：%d\n\n",r_queue);
-		else
+		if (pdTRUE!= xReturn)
 			printf(" 数据接收出错, 错误代码: 0x%lx\n",xReturn);
+		else
+		{
+			switch (Tsakmsg.id)
+			{
+				
+				case Intmsg :
+				{
+					printf("[LED_TASK]:%d",Tsakmsg.data.intdata);
+					break;
+					
+				
+				}
+				case Charmsg :
+				{
+					printf("[KEY_TASK]:%s",Tsakmsg.data.chrdata);
+					break;
+				
+				}
+				
+				defalut :
+				{
+					printf("error data");
+					break ;
+				}
+			
+			}
+		
+		
+		}
+			
 
 		//OLED_ShowString(0,10,"hello FreeRtos!!!",12);
 		//vTaskDelay(20);/* 延时20个tick */
