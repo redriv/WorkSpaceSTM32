@@ -49,6 +49,7 @@
 ..\obj\main.o: ..\FreeRTOS\include\mpu_wrappers.h
 ..\obj\main.o: ..\FreeRTOS\include\task.h
 ..\obj\main.o: ..\FreeRTOS\include\list.h
-..\obj\main.o: ..\HARDWARE\LED\oled.h
-..\obj\main.o: F:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\main.o: ..\HARDWARE\OLED\oled_fun.h
+..\obj\main.o: ..\HARDWARE\I2C\i2c.h
+..\obj\main.o: ..\HARDWARE\OLED\bmp.h
 ..\obj\main.o: ..\FreeRTOS\include\queue.h

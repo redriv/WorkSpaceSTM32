@@ -1,7 +1,8 @@
 #include "sys.h"
 #include "led.h"
 #include "key.h"
-#include "oled.h"
+#include "oled_fun.h"
+#include "bmp.h"
 
 #include "FreeRTOS.h"
 #include "task.h"
@@ -110,11 +111,14 @@ static void BSP_Init(void)
   
 	/* 按键初始化	*/	
 	KEY_Init();
-	GPIO_ResetBits(GPIOA,GPIO_Pin_6 );//设置高，灯灭
+	
 	
 	/* 初始化OLED   */
-	//OLED_Init();				
-	GPIO_ResetBits(GPIOA, GPIO_Pin_7);//设置高，灯灭
+	i2c_init();	 	// 针对当前AT24C02的初始化  GPIO
+	SSD1315_init();	// 初始化液晶屏芯片 SSD1315   
+	OLED_Clear();	//清除屏幕		
+	show_Desktop() ;                                    //显示桌面
+	
 }
 
 
