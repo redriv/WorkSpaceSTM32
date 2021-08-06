@@ -228,7 +228,7 @@ static void KEY_Task(void* parameter)
 			{					
 					vTaskSuspend(LED_Task_Handle);/* 挂起LED任务 */
 				
-					KEY_msg.data.chrdata ="挂起Test任务成功！";
+					KEY_msg.data.chrdata ="Task waitting";
 					xReturn = xQueueSend( Test_Queue, /*  消息队列的句柄 */
 											&KEY_msg, /*  发送的消息内容 */
 												 0 ); /*  等待时间 0 */
@@ -240,7 +240,7 @@ static void KEY_Task(void* parameter)
 					
 					vTaskResume(LED_Task_Handle);/* 恢复LED任务！ */	
 				
-					KEY_msg.data.chrdata ="恢复Test任务成功！";
+					KEY_msg.data.chrdata ="Task running!";
 					xReturn = xQueueSend( Test_Queue, /*  消息队列的句柄 */
 											&KEY_msg, /*  发送的消息内容 */
 												 0 ); /*  等待时间 0 */
@@ -267,9 +267,8 @@ static void KEY_Task(void* parameter)
   ********************************************************************/
 static void OLED_Task(void* parameter)
 {
-	int r_queue; /* 定义一个接收消息的变量 */
-	msg Tsakmsg;
-		
+	
+	msg Tsakmsg;	
  
 	while(1)
 	{
@@ -287,6 +286,7 @@ static void OLED_Task(void* parameter)
 				case Intmsg :
 				{
 					printf("[LED_TASK]:%d",Tsakmsg.data.intdata);
+					OLED_ShowNum(90,2,Tsakmsg.data.intdata,2,16);
 					break;
 					
 				
@@ -294,24 +294,16 @@ static void OLED_Task(void* parameter)
 				case Charmsg :
 				{
 					printf("[KEY_TASK]:%s",Tsakmsg.data.chrdata);
+					OLED_ShowString(0,6,(u8 *)Tsakmsg.data.chrdata,16);
 					break;
 				
 				}
 				
-				defalut :
-				{
-					printf("error data");
-					break ;
-				}
+				default: break;
+				
 			
-			}
-		
-		
+			}				
 		}
-			
-
-		//OLED_ShowString(0,10,"hello FreeRtos!!!",12);
-		//vTaskDelay(20);/* 延时20个tick */
 	}
 
 }

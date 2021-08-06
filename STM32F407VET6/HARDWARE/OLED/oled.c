@@ -70,7 +70,7 @@ static void oled_Delay(void)
 }
 void SSD1315_init(void)
 {
-	delay_ms(200);
+	oled_Delay();
 
 	OLED_WR_Byte(0xAE,OLED_CMD);//--display off
 	OLED_WR_Byte(0x00,OLED_CMD);//---set low column address
@@ -313,8 +313,8 @@ void OLED_ShowNum(u8 x,u8 y,u32 num,u8 len,u8 size2)
 
 
 //显示一个字符号串 
-//OLED_ShowString(      6,   3,"0.96' OLED TEST",16);
-void OLED_ShowString(u8 x,u8 y,u8 *chr          ,u8 Char_Size)
+//OLED_ShowString( 6,   3,"0.96' OLED TEST",16);
+void OLED_ShowString(u8 x,u8 y,u8 *chr ,u8 Char_Size)
 {
 	unsigned char j=0;
 	while (chr[j]!='\0')
@@ -355,17 +355,18 @@ void OLED_DrawBMP(unsigned char x0, unsigned char y0,unsigned char x1, unsigned 
 //显示桌面
 void show_Desktop( void )
 {
-				OLED_ShowCHinese(0, 0,0);//中
-				OLED_ShowCHinese(18,0,1);//景
-				OLED_ShowCHinese(36,0,2);//园
-				OLED_ShowCHinese(54,0,3);//电
-				OLED_ShowCHinese(72,0,4);//子
-				OLED_ShowCHinese(90,0,5);//科
-				OLED_ShowCHinese(108,0,6);//技
-					
-				OLED_ShowString(0,2,"L : ",16);
-				OLED_ShowString(0,4,"T : ",16);  
-				OLED_ShowString(0,6,"D : ",16); 
+//				OLED_ShowCHinese(0, 0,0);//中
+//				OLED_ShowCHinese(18,0,1);//景
+//				OLED_ShowCHinese(36,0,2);//园
+//				OLED_ShowCHinese(54,0,3);//电
+//				OLED_ShowCHinese(72,0,4);//子
+//				OLED_ShowCHinese(90,0,5);//科
+//				OLED_ShowCHinese(108,0,6);//技
+	
+				OLED_ShowString(0,0,"[FreeRTOS_Test]",16);					
+				OLED_ShowString(0,2,"[LED_TASK]:",16);
+				OLED_ShowString(0,4,"[KEY_TASK]:",16);  
+				
 
 
 }

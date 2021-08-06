@@ -32,8 +32,6 @@
 #define SDA_W	PBout(9)
 #define SDA_R	PBin(9) 
 
-extern void delay_ms(u16 nms);
-extern void delay_us(u32 nus);
 
 void i2c_init(void);
 void at24c02_read(uint8_t addr,uint8_t *pbuf,uint8_t len);
