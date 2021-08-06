@@ -285,7 +285,7 @@ static void OLED_Task(void* parameter)
 				
 				case Intmsg :
 				{
-					//printf("[LED_TASK]:%d",Tsakmsg.data.intdata);
+					printf("[LED_TASK]:%d",Tsakmsg.data.intdata);
 					OLED_ShowNum(90,2,Tsakmsg.data.intdata,2,16);
 					break;
 					
@@ -293,7 +293,7 @@ static void OLED_Task(void* parameter)
 				}
 				case Charmsg :
 				{
-					//printf("[KEY_TASK]:%s",Tsakmsg.data.chrdata);
+					printf("[KEY_TASK]:%s",Tsakmsg.data.chrdata);
 					OLED_ShowString(0,6,(u8 *)Tsakmsg.data.chrdata,16);
 					break;
 				
