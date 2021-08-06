@@ -117,7 +117,7 @@ static void BSP_Init(void)
 	i2c_init();	 	// 针对当前AT24C02的初始化  GPIO
 	SSD1315_init();	// 初始化液晶屏芯片 SSD1315   
 	OLED_Clear();	//清除屏幕		
-	show_Desktop() ;                                    //显示桌面
+	show_Desktop() ;//显示桌面
 	
 }
 
@@ -234,6 +234,7 @@ static void KEY_Task(void* parameter)
 												 0 ); /*  等待时间 0 */
 					if (pdPASS != xReturn)	printf(" 消息 KEY_msg  发送失败!\n\n");
 					break;
+				
 			}
 			case KEY1_PRES:	//控制LED1翻转	
 			{					
@@ -276,8 +277,7 @@ static void OLED_Task(void* parameter)
 		xReturn = xQueueReceive( Test_Queue, /*  消息队列的句柄 */
 								   &Tsakmsg, /*  发送的消息内容 */
 						     portMAX_DELAY); /*  等待时间  一直等 */
-		if (pdTRUE!= xReturn)
-			printf(" 数据接收出错, 错误代码: 0x%lx\n",xReturn);
+		if(pdTRUE!= xReturn) printf(" 数据接收出错, 错误代码: 0x%lx\n",xReturn);
 		else
 		{
 			switch (Tsakmsg.id)
@@ -285,7 +285,7 @@ static void OLED_Task(void* parameter)
 				
 				case Intmsg :
 				{
-					printf("[LED_TASK]:%d",Tsakmsg.data.intdata);
+					//printf("[LED_TASK]:%d",Tsakmsg.data.intdata);
 					OLED_ShowNum(90,2,Tsakmsg.data.intdata,2,16);
 					break;
 					
@@ -293,7 +293,7 @@ static void OLED_Task(void* parameter)
 				}
 				case Charmsg :
 				{
-					printf("[KEY_TASK]:%s",Tsakmsg.data.chrdata);
+					//printf("[KEY_TASK]:%s",Tsakmsg.data.chrdata);
 					OLED_ShowString(0,6,(u8 *)Tsakmsg.data.chrdata,16);
 					break;
 				
