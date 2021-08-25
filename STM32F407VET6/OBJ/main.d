@@ -35,6 +35,7 @@
 ..\obj\main.o: ..\FWLIB\inc\stm32f4xx_dac.h
 ..\obj\main.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\main.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
+..\obj\main.o: ..\SYSTEM\delay\delay.h
 ..\obj\main.o: ..\HARDWARE\LED\led.h
 ..\obj\main.o: ..\HARDWARE\KEY\key.h
 ..\obj\main.o: ..\FreeRTOS\include\FreeRTOS.h
@@ -52,4 +53,6 @@
 ..\obj\main.o: ..\HARDWARE\OLED\oled_fun.h
 ..\obj\main.o: ..\HARDWARE\I2C\i2c.h
 ..\obj\main.o: ..\HARDWARE\OLED\bmp.h
+..\obj\main.o: ..\HARDWARE\MALLOC\malloc.h
+..\obj\main.o: ..\HARDWARE\SDIO\sdio_sdcard.h
 ..\obj\main.o: ..\FreeRTOS\include\queue.h

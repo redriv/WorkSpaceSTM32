@@ -1,4 +1,4 @@
-SET PATH=F:\Keil5\ARM\ARMCC\Bin;F:\VM\BIN\;C:\WINDOWS\SYSTEM32;C:\WINDOWS;C:\WINDOWS\SYSTEM32\WBEM;C:\WINDOWS\SYSTEM32\WINDOWSPOWERSHELL\V1.0\;C:\WINDOWS\SYSTEM32\OPENSSH\;C:\PROGRAM FILES (X86)\NVIDIA CORPORATION\PHYSX\COMMON;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files\Git\cmd;C:\Users\River\AppData\Local\Microsoft\WindowsApps
+SET PATH=F:\Keil5\ARM\ARMCC\Bin;F:\VM\BIN\;C:\WINDOWS\SYSTEM32;C:\WINDOWS;C:\WINDOWS\SYSTEM32\WBEM;C:\WINDOWS\SYSTEM32\WINDOWSPOWERSHELL\V1.0\;C:\WINDOWS\SYSTEM32\OPENSSH\;C:\PROGRAM FILES (X86)\NVIDIA CORPORATION\PHYSX\COMMON;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files\Git\cmd;C:\Users\River\AppData\Local\Microsoft\WindowsApps;F:\VScode\Microsoft VS Code\bin;F:\GUN\MinGW\bin
 SET CPU_TYPE=STM32F407VE
 SET CPU_VENDOR=STMicroelectronics
 SET UV2_TARGET=Test_LED
@@ -11,13 +11,18 @@ SET CPU_CLOCK=0x00B71B00
 "F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\key.__i"
 "F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\i2c.__i"
 "F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\oled.__i"
+"F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\sdio_sdcard.__i"
 "F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\sys.__i"
+"F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\delay.__i"
 "F:\Keil5\ARM\ARMCC\Bin\ArmAsm" --Via "..\obj\startup_stm32f40_41xxx._ia"
 "F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\misc.__i"
+"F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\stm32f4xx_fsmc.__i"
+"F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\stm32f4xx_sdio.__i"
 "F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\stm32f4xx_gpio.__i"
 "F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\stm32f4xx_rcc.__i"
 "F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\stm32f4xx_syscfg.__i"
 "F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\stm32f4xx_usart.__i"
+"F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\stm32f4xx_dma.__i"
 "F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\croutine.__i"
 "F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\event_groups.__i"
 "F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\list.__i"
@@ -26,5 +31,6 @@ SET CPU_CLOCK=0x00B71B00
 "F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\timers.__i"
 "F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\heap_4.__i"
 "F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\port.__i"
+"F:\Keil5\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\malloc.__i"
 "F:\Keil5\ARM\ARMCC\Bin\ArmLink" --Via "..\OBJ\LED.lnp"
 "F:\Keil5\ARM\ARMCC\Bin\fromelf.exe" "..\OBJ\LED.axf" --i32combined --output "..\OBJ\LED.hex"

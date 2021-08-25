@@ -366,6 +366,9 @@ void show_Desktop( void )
 				OLED_ShowString(0,0,"[FreeRTOS_Test]",16);					
 				OLED_ShowString(0,2,"[LED_TASK]:",16);
 				OLED_ShowString(0,4,"[KEY_TASK]:",16);  
+				OLED_ShowNum(90,4,1,2,16);
+				OLED_ShowString(0,6,"Task running!",16);
+					
 				
 
 

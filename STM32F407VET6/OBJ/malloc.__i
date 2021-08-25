@@ -1,0 +1,6 @@
+-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\CORE -I..\USER -I..\FWLIB\inc -I..\SYSTEM\sys -I..\SYSTEM\delay -I..\FreeRTOS\include -I..\FreeRTOS\src -I..\FreeRTOS\port\MemMang -I..\FreeRTOS\port\RVDS\ARM_CM4F -I..\HARDWARE\I2C -I..\HARDWARE\KEY -I..\HARDWARE\LED -I..\HARDWARE\UART -I..\HARDWARE\OLED -I..\HARDWARE\MALLOC -I..\HARDWARE\SDIO
+-I F:\GitSpace\workspce\STM32F407VET6\USER\RTE
+-I F:\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0
+-I F:\Keil5\ARM\CMSIS\Include
+-D__UVISION_VERSION="514" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER --C99
+-o ..\obj\malloc.o --omf_browse ..\obj\malloc.crf --depend ..\obj\malloc.d "..\HARDWARE\MALLOC\malloc.c"

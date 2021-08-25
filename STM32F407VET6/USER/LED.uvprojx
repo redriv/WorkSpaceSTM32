@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\USER;..\FWLIB\inc;..\SYSTEM\sys;..\FreeRTOS\include;..\FreeRTOS\src;..\FreeRTOS\port\MemMang;..\FreeRTOS\port\RVDS\ARM_CM4F;..\HARDWARE\KEY;..\HARDWARE\LED;..\HARDWARE\UART</IncludePath>
+              <IncludePath>..\CORE;..\USER;..\FWLIB\inc;..\SYSTEM\sys;..\FreeRTOS\include;..\FreeRTOS\src;..\FreeRTOS\port\MemMang;..\FreeRTOS\port\RVDS\ARM_CM4F;..\HARDWARE\I2C;..\HARDWARE\KEY;..\HARDWARE\LED;..\HARDWARE\UART;..\HARDWARE\OLED</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -444,14 +444,19 @@
               <FilePath>..\HARDWARE\LED\led.c</FilePath>
             </File>
             <File>
-              <FileName>oled.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\LED\oled.c</FilePath>
-            </File>
-            <File>
               <FileName>key.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\KEY\key.c</FilePath>
+            </File>
+            <File>
+              <FileName>i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\I2C\i2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>oled.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\OLED\oled.c</FilePath>
             </File>
           </Files>
         </Group>
